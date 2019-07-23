@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script defer src="{% static 'js/javascript.js' %}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p>Esse é o perfil do {{ nome }} </p>
+    {% if nome == "joao" %}
+       <p>sim, essa é a pagina do joão</p>
+    {% elif nome == "eric" %}
+        <p> essa não é a pagina do joão</p>
+    {% else %}
+        <p>esses são os amores da sua vida</p>
+    {% endif %}
+
+    <h1>Os bichinhos da sua vida - patrocionado pelo facebook.com , crie seu perfil ;)</h1>
+    <ul>
+    {% for dog in cachorros %}
+        <li>{{ dog }}</li>
+    {% endfor %}
+    </ul>
+
+    <h3>Estamos na aplicaçao Lion do projeto Thundercats</h3>
+</body>
+</html>
